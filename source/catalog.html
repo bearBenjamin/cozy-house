@@ -18,20 +18,20 @@
           <p class="page-navigation__logo-text">Shelter for pets in Boston</p>
         </a>
         <ul class="page-navigation__list">
+          <li class="page-navigation__list-item">
+            <a class="page-navigation__list-item-link" href="index.html#about">
+              About the shelter
+            </a>
+          </li>
           <li class="page-navigation__list-item page-navigation__list-item--current">
             <!-- linthtml-disable -->
-            <a class="page-navigation__list-item-link page-navigation__list-item-link--current">
-              About the shelter
+            <a class="page-navigation__list-item-link page-navigation__list-item--current">
+              Our pets
             </a>
             <!-- linthtml-enable -->
           </li>
           <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="catalog.html">
-              Our pets
-            </a>
-          </li>
-          <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="#help">
+            <a class="page-navigation__list-item-link" href="index.html#help">
               Help the shelter
             </a>
           </li>
@@ -53,7 +53,12 @@
       <div class="pets__slider-container">
         <ul class="pets__list">
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - кошка британец Катрин">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-katrine@1x.webp 1x, images/pets/pets-katrine@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-katrine@1x.jpg" srcset="images/pets/pets-katrine@2x.jpg" width="270" height="270" alt="Питомец приюта - кошка британец Катрин" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
               Katrine
             </h3>
@@ -62,16 +67,26 @@
             </button>
           </li>
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - щенок лабрадор Дженифер">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-jennifer@1x.webp 1x, images/pets/pets-jennifer@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-jennifer@1x.jpg" srcset="images/pets/pets-jennifer@2x.jpg" width="270" height="270" alt="Питомец приюта - щенок лабрадор Дженифер" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
-              Katrine
+              Jennifer
             </h3>
             <button class="pets__list-button" type="button" data-id="jennifer">
               Learn more
             </button>
           </li>
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - взрослая собака ретривер Вудди">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-woody@1x.webp 1x, images/pets/pets-woody@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-woody@1x.jpg" srcset="images/pets/pets-woody@2x.jpg" width="270" height="270" alt="Питомец приюта - взрослая собака ретривер Вудди" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
               Woody
             </h3>
@@ -80,7 +95,12 @@
             </button>
           </li>
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - щенок София">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-sophia@1x.webp 1x, images/pets/pets-sophia@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-sophia@1x.jpg" srcset="images/pets/pets-sophia@2x.jpg" width="270" height="270" alt="Питомец приюта - щенок София" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
               Sophia
             </h3>
@@ -89,7 +109,12 @@
             </button>
           </li>
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - кошка Тимми">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-timmy@1x.webp 1x, images/pets/pets-timmy@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-timmy@1x.jpg" srcset="images/pets/pets-timmy@2x.jpg" width="270" height="270" alt="Питомец приюта - кошка Тимми" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
               Timmy
             </h3>
@@ -98,7 +123,12 @@
             </button>
           </li>
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - взрослая собака Чарли">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-charly@1x.webp 1x, images/pets/pets-charly@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-charly@1x.jpg" srcset="images/pets/pets-charly@2x.jpg" width="270" height="270" alt="Питомец приюта - взрослая собака Чарли" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
               Charly
             </h3>
@@ -107,7 +137,12 @@
             </button>
           </li>
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - щенок Скарлет">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-scarlet@1x.webp 1x, images/pets/pets-scarlet@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-scarlet@1x.jpg" srcset="images/pets/pets-scarlet@2x.jpg" width="270" height="270" alt="Питомец приюта - щенок Скарлет" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
               Scrarlett
             </h3>
@@ -116,7 +151,12 @@
             </button>
           </li>
           <li class="pets__list-item">
-            <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец приюта - кот Фредди">
+            <div class="pets__image-container">
+              <picture>
+                <source width="270" height="270" type="image/webp" srcset="images/pets/pets-freddie@1x.webp 1x, images/pets/pets-freddie@2x.webp 2x">
+                <img class="pets__list-image" src="images/pets/pets-freddie@1x.jpg" srcset="images/pets/pets-freddie@2x.jpg" width="270" height="270" alt="Питомец приюта - кот Фредди" loading="lazy">
+              </picture>
+            </div>
             <h3 class="pets__list-title">
               Freddie
             </h3>
@@ -188,7 +228,14 @@
           </li>
         </ul>
       </div>
-      <img class="main-footer__image" src="#" width="300" height="310" alt="Милый щенок">
+      <div class="main-footer__image-container">
+        <picture>
+          <source width="260" height="269" type="image/webp" media="(max-width: 767px)" srcset="images/mobile-footer-puppy@1x.webp 1x, images/mobile-footer-puppy@2x.webp 2x">
+          <source width="300" height="310" type="image/webp" srcset="images/dekstop-footer-puppy@1x.webp 1x, images/dekstop-footer-puppy@2x.webp 2x">
+          <source width="260" height="269" type="image/jpg" media="(max-width: 767px)" srcset="images/mobile-footer-puppy@1x.png 1x, images/mobile-footer-puppy@2x.png 2x">
+          <img class="main-footer__image" src="images/dekstop-footer-puppy@1x.png" srcset="images/dekstop-footer-puppy@2x.png" width="300" height="310" alt="Милый щенок" loading="lazy">
+        </picture>
+      </div>
     </div>
   </footer>
 </body>
