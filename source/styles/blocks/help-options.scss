@@ -1,0 +1,45 @@
+.help-options {
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: $color-dark-l;
+  background-color: $color-light-xl;
+}
+
+// .help-options__wrapper {}
+
+.help-options__title {
+  font-family: $second-family;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+}
+
+.help-options__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.help-options__list-item {
+  font-family: $second-family;
+  font-size: 20px;
+  line-height: 115%;
+}
+
+// .help-options__list-item-food {}
+
+// .help-options__list-item-transport {}
+
+// .help-options__list-item-toys {}
+
+// .help-options__list-item-bowls {}
+
+// .help-options__list-item-shampoos {}
+
+// .help-options__list-item-vitamins {}
+
+// .help-options__list-item-medicine {}
+
+// .help-options__list-item-collars {}
+
+// .help-options__list-item-sleep-area {}

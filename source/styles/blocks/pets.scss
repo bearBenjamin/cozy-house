@@ -1,0 +1,59 @@
+.pets {
+  background-color: $color-light-l;
+  color: $color-dark-l;
+}
+
+// .pets__wrapper {}
+
+.pets__title {
+  margin: 0;
+  font-family: $second-family;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+// .pets__slider-container {}
+
+.pets__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pets__list-item {
+  font-family: $second-family;
+}
+
+// .pets__image-container {}
+
+// .pets__list-image {}
+
+.pets__list-title {
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.pets__list-button,
+.pets__show-more {
+  font-family: $second-family;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+  background-color: inherit;
+}
+
+// .pets__slider-control {}
+
+// .pets__button-left {}
+
+// .pets__button-text {}
+
+// .pets__button-right {}
+
+.pets__show-more {
+  background-color: $color-primary;
+}

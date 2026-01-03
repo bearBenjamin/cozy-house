@@ -1,0 +1,28 @@
+.footer-contacts {
+  font-family: $second-family;
+  color: $color-light-xl;
+}
+
+.footer-contacts__title {
+  margin: 0;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.footer-contacts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-contacts__list-item {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: $color-primary;
+}
+
+.footer-contacts__list-link {
+  color: $color-primary;
+}
