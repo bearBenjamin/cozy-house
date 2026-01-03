@@ -1,3 +1,22 @@
 /* GLOBAL */
+@import "./common/variables.scss";
+@import "./common/global.scss";
+@import "./common/visually-hidden.scss";
 
 /* BLOCKS */
+@import "./blocks/page.scss";
+@import "./blocks/main-header.scss";
+@import "./blocks/wrapper.scss";
+@import "./blocks/page-navigation.scss";
+@import "./blocks/button-toggle.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/main-container.scss";
+@import "./blocks/about.scss";
+@import "./blocks/pets.scss";
+@import "./blocks/help-options.scss";
+@import "./blocks/donations.scss";
+@import "./blocks/main-footer.scss";
+@import "./blocks/footer-contacts.scss";
+@import "./blocks/map-coordinats.scss";
+@import "./blocks/page-header.scss";
+@import "./blocks/navigation.scss";

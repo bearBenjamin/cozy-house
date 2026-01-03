@@ -1,0 +1,23 @@
+.donations {
+  color: $color-dark-l;
+  background-color: $color-light-l;
+}
+
+// .donations__wrapper {}
+
+// .donations__image-container {}
+
+// .donations__image {}
+
+// .donations__title {}
+
+// .donations__text {}
+
+.donations__link {
+  font-family: $second-family;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: $color-dark-l;
+  background-color: $color-primary;
+}

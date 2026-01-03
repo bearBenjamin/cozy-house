@@ -5,46 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cozy House</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/index.js" defer></script>
 </head>
 
-<body>
-  <header class="main-header">
-    <div class="main-header__wrapper wrapper">
-      <nav class="main-header__nav page-navigation">
-        <a class="page-navigation__logo-link" href="#">
-          <p class="page-navigation__logo">Cozy House</p>
-          <p class="page-navigation__logo-text">Shelter for pets in Boston</p>
+<body class="page__body">
+  <header class="page-header">
+    <div class="page-header__wrapper wrapper">
+      <nav class="page-header__nav navigation">
+        <a class="navigation__logo-link" href="#">
+          <p class="navigation__logo">Cozy House</p>
+          <p class="navigation__logo-text">Shelter for pets in Boston</p>
         </a>
-        <ul class="page-navigation__list">
-
-          <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="index.html#about">
+        <ul class="navigation__list">
+          <li class="navigation__list-item">
+            <a class="navigation__list-item-link" href="index.html#about">
               About the shelter
             </a>
           </li>
-          <li class="page-navigation__list-item page-navigation__list-item--current">
+          <li class="navigation__list-item navigation__list-item--current">
             <!-- linthtml-disable -->
-            <a class="page-navigation__list-item-link page-navigation__list-item--current">
-
+            <a class="navigation__list-item-link navigation__list-item-link--current">
               Our pets
             </a>
             <!-- linthtml-enable -->
           </li>
-          <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="index.html#help">
+          <li class="navigation__list-item">
+            <a class="navigation__list-item-link" href="index.html#help">
               Help the shelter
             </a>
           </li>
-          <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="#contacts">
+          <li class="navigation__list-item">
+            <a class="navigation__list-item-link" href="#contacts">
               Contacts
             </a>
           </li>
         </ul>
       </nav>
-      <button class="main-header__button button-toggle" type="button">
+      <button class="page-header__button button-toggle" type="button">
         <span class="button-toggle__text visually-hidden">Открыть меню</span>
       </button>
     </div>

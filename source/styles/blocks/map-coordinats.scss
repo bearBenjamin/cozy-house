@@ -1,0 +1,28 @@
+.map-coordinats {
+  font-family: $second-family;
+  color: $color-light-xl;
+}
+
+.map-coordinats__title {
+  margin: 0;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.map-coordinats__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.map-coordinats__list-item {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: $color-primary;
+}
+
+.map-coordinats__list-link {
+  color: $color-primary;
+}

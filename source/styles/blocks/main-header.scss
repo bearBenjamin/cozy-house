@@ -1,0 +1,23 @@
+.main-header {
+  background-color: $gradient-background;
+  background-image:
+    image-set(
+      "../../images/noise_transparent@2x@1x.webp" 1x,
+      "../../images/noise_transparent@2x@2x.webp" 2x,
+      "../../images/noise_transparent@2x@1x.jpg" 1x,
+      "../../images/noise_transparent@2x@2x.jpg" 2x
+    ),
+    radial-gradient(circle at top left, #5b483a 0%, #262425 100%);
+  background-repeat: repeat, no-repeat;
+  background-size: auto, cover;
+}
+
+//.main-header__wrapper {}
+
+//.main-header__nav {}
+
+.main-header__button {
+  display: none;
+}
+
+//.main-header__hero {}
