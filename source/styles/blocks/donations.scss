@@ -9,15 +9,38 @@
 
 // .donations__image {}
 
-// .donations__title {}
+.donations__title {
+  margin: 0;
+}
 
-// .donations__text {}
+.donations__text {
+  margin: 0;
+}
 
 .donations__link {
+  position: relative;
+  display: block;
+  width: fit-content;
+  padding: 10px 15px 10px 60px;
+  text-align: right;
   font-family: $second-family;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: $color-dark-l;
   background-color: $color-primary;
+}
+
+.donations__link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 23px;
+  background-image: url("../../icons/stack.svg#credit-card");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
