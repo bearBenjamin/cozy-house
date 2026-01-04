@@ -1,4 +1,5 @@
 .map-coordinats {
+  width: 302px;
   font-family: $second-family;
   color: $color-light-xl;
 }
@@ -16,7 +17,8 @@
   list-style: none;
 }
 
-.map-coordinats__list-item {
+.map-coordinats__list-item:not(:last-child) {
+  margin-bottom: 40px;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
@@ -24,5 +26,27 @@
 }
 
 .map-coordinats__list-link {
+  position: relative;
+  width: fit-content;
+  padding-left: 42px;
+  display: flex;
+  justify-content: end;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
   color: $color-primary;
+}
+
+.map-coordinats__list-link::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-image: url("../../icons/stack.svg#icon-marker");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
