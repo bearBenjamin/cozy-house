@@ -2,28 +2,99 @@
   background-color: $color-light-xl;
 }
 
-// .about__wrapper {}
+.about__wrapper {
+  display: grid;
+  grid-template-columns: min-content 430px;
+  grid-template-rows: auto auto auto;
+  column-gap: 120px;
+  justify-content: center;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-left: 169px;
+    padding-right: 169px;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 0;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding-left: 10px;
+    padding-right: 10px;
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+}
 
 .about__title {
   margin: 0;
+  padding-top: 14px;
+  padding-right: 60px;
+  margin-bottom: 25px;
   font-family: $second-family;
   font-size: 35px;
+  font-weight: 400;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: $color-dark-l;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-top: 0;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-bottom: 23px;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 25px;
+    text-align: center;
+  }
 }
 
 .about__text {
   margin: 0;
+  margin-bottom: 25px;
   font-size: 15px;
   line-height: 160%;
   color: $color-dark-xl;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 22px;
+    text-align: justify;
+  }
 }
 
 // .about__text-one {}
 
-// .about__text-two {}
+.about__text-two {
+  margin-bottom: 0;
+  padding-bottom: 14px;
 
-// .about__image-container {}
+  @media (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 80px;
+    padding-bottom: 0;
+  }
 
-// .about__picture {}
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-bottom: 42px;
+  }
+}
+
+.about__image-container {
+  grid-area: 1 / 1 / 4 / 2;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    grid-area: 4 / 1 / 5 / 1;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 260px;
+  }
+}
+
+.about__picture {
+  display: block;
+}

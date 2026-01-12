@@ -1,4 +1,5 @@
 .main-footer {
+  padding-top: 40px;
   background-color: $gradient-background;
   background-image:
     image-set(
@@ -11,14 +12,82 @@
 
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-top: 30px;
+  }
 }
 
-// .main-footer__wrapper {}
+.main-footer__wrapper {
+  display: flex;
+  gap: 160px;
 
-// .main-footer__contact-container {}
+  @media (max-width: ($desktop-width - 1px)) {
+    flex-wrap: wrap;
+    gap: 67px 60px;
+  }
 
-// .main-footer__map-coordinats {}
+  @media (max-width: ($tablet-width - 1px)) {
+    gap: 42px 0;
+  }
+}
 
-// .main-footer__image-container {}
+.main-footer__contact-container,
+.main-footer__map-coordinats {
+  padding-top: 16px;
+  padding-bottom: 54px;
 
-// .main-footer__image {}
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.main-footer__contact-container {
+  width: 100%;
+  max-width: 278px;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin-left: 34px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-left: 0;
+    max-width: 300px;
+    padding-right: 11px;
+    padding-left: 11px;
+    padding-bottom: 0;
+  }
+}
+
+.main-footer__map-coordinats {
+  width: 100%;
+  max-width: 302px;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin-right: 34px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    max-width: 300px;
+    margin-right: 0;
+    padding-bottom: 0;
+  }
+}
+
+.main-footer__image-container {
+  @media (max-width: ($desktop-width - 1px)) {
+    margin: 0 auto;
+  }
+}
+
+.main-footer__image {
+  display: block;
+  width: 300px;
+  height: 310px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 260px;
+    height: 269px;
+  }
+}

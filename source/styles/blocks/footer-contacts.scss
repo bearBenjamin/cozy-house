@@ -5,33 +5,67 @@
 
 .footer-contacts__title {
   margin: 0;
+  flex-shrink: 0;
+  margin-bottom: 40px;
   font-size: 35px;
+  font-weight: 400;
   line-height: 130%;
   letter-spacing: 0.06em;
+  white-space: normal;
+  word-break: keep-all;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    font-size: 25px;
+    text-align: center;
+  }
+}
+
+.footer-contacts__nowrap {
+  white-space: nowrap;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    white-space: normal;
+  }
 }
 
 .footer-contacts__list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .footer-contacts__list-item:not(:last-child) {
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: $color-primary;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 42px;
+  }
 }
 
 .footer-contacts__list-link {
+  display: block;
   position: relative;
   width: fit-content;
-  padding: 5px 0 4px 60px;
+  padding: 2px 0 2px 60px;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: $color-primary;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    padding: 5px 0 2px 60px;
+  }
 }
 
 .footer-contacts__link-email::before {
@@ -42,10 +76,11 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  background-image: url("../../icons/stack.svg#icon-email");
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
+  mask-image: url("../../icons/stack.svg#icon-email");
+  mask-position: left;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background-color: $color-primary;
 }
 
 .footer-contacts__link-phone::before {
@@ -56,8 +91,18 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  background-image: url("../../icons/stack.svg#icon-phone");
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
+  mask-image: url("../../icons/stack.svg#icon-phone");
+  mask-position: left;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background-color: $color-primary;
+}
+
+.footer-contacts__list-link:hover {
+  color: $color-primary-light;
+}
+
+.footer-contacts__link-email:hover::before,
+.footer-contacts__link-phone:hover::before {
+  background-color: $color-primary-light;
 }

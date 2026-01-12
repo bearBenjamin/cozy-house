@@ -1,4 +1,5 @@
 .main-header {
+  padding-top: 60px;
   background-color: $gradient-background;
   background-image:
     image-set(
@@ -10,14 +11,37 @@
     radial-gradient(circle at top left, #5b483a 0%, #262425 100%);
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
+
+  &--close {
+    @media (max-width: ($tablet-width - 1px)) {
+      background-color: $color-dark-3xl;
+      background-image: none;
+    }
+  }
+
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-top: 30px;
+  }
 }
 
-//.main-header__wrapper {}
+.main-header__wrapper {
+  @media (max-width: ($tablet-width - 1px)) {
+    position: relative;
+  }
+}
 
-//.main-header__nav {}
+.main-header__nav {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 257px;
+  }
+}
 
 .main-header__button {
   display: none;
 }
-
-//.main-header__hero {}

@@ -3,7 +3,9 @@
   color: $color-dark-3xl;
 }
 
-// .navigation__logo-link {}
+.navigation__logo-link {
+  display: block;
+}
 
 .navigation__logo {
   margin: 0;
