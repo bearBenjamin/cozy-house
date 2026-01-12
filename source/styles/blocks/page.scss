@@ -14,4 +14,8 @@
 
   background-color: $color-light-xl;
   color: $color-dark-3xl;
+
+  &--noscroll {
+    overflow-y: hidden;
+  }
 }

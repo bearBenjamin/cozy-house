@@ -13,29 +13,29 @@
 <body class="page__body">
   <header class="main-header">
     <div class="main-header__wrapper wrapper">
-      <nav class="main-header__nav page-navigation">
-        <a class="page-navigation__logo-link" href="#">
-          <p class="page-navigation__logo">Cozy House</p>
-          <p class="page-navigation__logo-text">Shelter for pets in Boston</p>
+      <nav class="main-header__nav main-navigation">
+        <a class="main-navigation__logo-link" href="#">
+          <p class="main-navigation__logo">Cozy House</p>
+          <p class="main-navigation__logo-text">Shelter for pets in Boston</p>
         </a>
-        <ul class="page-navigation__list">
-          <li class="page-navigation__list-item page-navigation__list-item--current">
-            <a class="page-navigation__list-item-link page-navigation__list-item-link--current" href="#about">
+        <ul class="main-navigation__list main-navigation__list--open">
+          <li class="main-navigation__list-item">
+            <a class="main-navigation__list-item-link main-navigation__list-item-link--current">
               About the shelter
             </a>
           </li>
-          <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="#pets">
+          <li class="main-navigation__list-item">
+            <a class="main-navigation__list-item-link" href="catalog.html">
               Our pets
             </a>
           </li>
-          <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="#help">
+          <li class="main-navigation__list-item">
+            <a class="main-navigation__list-item-link" href="#help">
               Help the shelter
             </a>
           </li>
-          <li class="page-navigation__list-item">
-            <a class="page-navigation__list-item-link" href="#contacts">
+          <li class="main-navigation__list-item">
+            <a class="main-navigation__list-item-link" href="#contacts">
               Contacts
             </a>
           </li>
@@ -43,6 +43,9 @@
       </nav>
       <button class="main-header__button button-toggle" type="button">
         <span class="button-toggle__text visually-hidden">Открыть меню</span>
+        <span class="button-toggle__line"></span>
+        <span class="button-toggle__line"></span>
+        <span class="button-toggle__line"></span>
       </button>
     </div>
 
@@ -53,6 +56,7 @@
         <a class="hero__link" href="#pets">
           Make a friend
         </a>
+
         <div class="hero__image-container">
           <picture>
             <source width="260" height="272" type="image/webp" media="(max-width: 767px)" srcset="images/mobile-start-screen-puppy@1x.webp 1x, images/mobile-start-screen-puppy@2x.webp 2x">
@@ -63,7 +67,6 @@
             <img class="hero__picture" src="images/dekstop-start-screen-puppy@1x.png" srcset="images/dekstop-start-screen-puppy@2x.png" width="698" height="728" alt="Щенок с надеждой в глазах" loading="lazy">
           </picture>
         </div>
-
       </div>
     </section>
 
@@ -71,7 +74,7 @@
   <main class="main-container">
     <section class="main-container__about about" id="about">
       <div class="about__wrapper wrapper">
-        <h2 class="about__title">About the shelter "Cozy House"</h2>
+        <h2 class="about__title">About the shelter &ldquo;Cozy House&rdquo;</h2>
         <p class="about__text about__text-one">
           Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.
         </p>
@@ -90,8 +93,8 @@
     </section>
     <section class="main-container__pets pets" id="pets">
       <div class="pets__wrapper wrapper">
-        <h2 class="pets__title">Our frineds who are looking for a house</h2>
         <div class="pets__slider-container">
+          <h2 class="pets__title">Our frineds who<br> are looking for a house</h2>
           <ul class="pets__list">
             <li class="pets__list-item">
               <div class="pets__image-container">
@@ -203,6 +206,7 @@
         <a class="donations__link" href="404.html">
           8380 2880 8028 8791 7435
         </a>
+        <p class="donations__info">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
       </div>
     </section>
   </main>
@@ -210,7 +214,7 @@
     <div class="main-footer__wrapper wrapper">
       <div class="main-footer__contact-container footer-contacts" id="contacts">
         <h2 class="footer-contacts__title">
-          For questions and suggestions
+          For questions <span class="footer-contacts__nowrap">and suggestions</span>
         </h2>
         <ul class="footer-contacts__list">
           <li class="footer-contacts__list-item">
@@ -231,12 +235,12 @@
         </h2>
         <ul class="map-coordinats__list">
           <li class="map-coordinats__list-item">
-            <a class="map-coordinats__list-link" href="#">
+            <a class="map-coordinats__list-link" href="https://maps.app.goo.gl/YjGuzV6WaC33EkaG7" target="_blank" rel="noopener noreferrer">
               1 Central Street, Boston (entrance from the store)
             </a>
           </li>
           <li class="map-coordinats__list-item">
-            <a class=" map-coordinats__list-link" href="#">
+            <a class=" map-coordinats__list-link" href="https://maps.app.goo.gl/cTVbVx29wNTtysxH7" target="_blank" rel="noopener noreferrer">
               18 South Park, London
             </a>
           </li>

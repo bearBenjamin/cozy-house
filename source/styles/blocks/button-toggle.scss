@@ -1,3 +1,59 @@
-// .button-toggle {}
+.button-toggle {
+  @media (max-width: ($tablet-width - 1px)) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 53px;
+    display: block;
+    width: 30px;
+    height: 22px;
+    background-color: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
 
-// .button-toggle__text {}
+  &--close {
+    @media (max-width: ($tablet-width - 1px)) {
+      margin: 0;
+      padding: 0;
+      border: none;
+
+      position: absolute;
+      top: 50%;
+      right: 53px;
+      transform: translateY(-50%);
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+}
+
+.button-toggle__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: $color-primary;
+  box-shadow:
+    0 10px 0 $color-primary,
+    0 20px 0 $color-primary;
+}
+
+.button-toggle--close .button-toggle__line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 29px;
+  height: 2px;
+  background-color: $color-primary;
+  transform: translate(-50%, -50%) rotate(90deg);
+  box-shadow:
+    0 10px 0 $color-primary,
+    0 -10px 0 $color-primary;
+}

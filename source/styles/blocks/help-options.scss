@@ -5,25 +5,64 @@
   background-color: $color-light-xl;
 }
 
-// .help-options__wrapper {}
+.help-options__wrapper {
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-right: 39px;
+    padding-left: 39px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
 
 .help-options__title {
   margin: 0;
+  margin-bottom: 60px;
+  padding-left: 444px;
+  padding-right: 446px;
   font-family: $second-family;
   font-weight: 400;
   font-size: 35px;
   line-height: 130%;
+  letter-spacing: 0.06em;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-left: 156px;
+    padding-right: 154px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-bottom: 40px;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 25px;
+  }
 }
 
 .help-options__list {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 
+  width: 100%;
+  max-width: 1026px;
   display: flex;
   flex-wrap: wrap;
   gap: 55px 120px;
   justify-content: center;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    max-width: 630px;
+    gap: 53px 60px;
+    justify-content: start;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    max-width: 290px;
+    gap: 30px;
+  }
 }
 
 .help-options__list-item {
@@ -35,6 +74,19 @@
   font-family: $second-family;
   font-size: 20px;
   line-height: 115%;
+  letter-spacing: 0.06em;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    width: 170px;
+    justify-content: center;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 130px;
+    min-height: 87px;
+    font-size: 15px;
+    line-height: 110%;
+  }
 }
 
 .help-options__list-item-food::before {
@@ -49,6 +101,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }
 
 .help-options__list-item-transport::before {
@@ -63,6 +121,17 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
+}
+
+.help-options__list-item-toys {
+  padding-right: 7px;
+  padding-left: 7px;
 }
 
 .help-options__list-item-toys::before {
@@ -77,6 +146,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }
 
 .help-options__list-item-bowls::before {
@@ -91,6 +166,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }
 
 .help-options__list-item-shampoos::before {
@@ -105,6 +186,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }
 
 .help-options__list-item-vitamins::before {
@@ -119,6 +206,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }
 
 .help-options__list-item-medicine::before {
@@ -133,6 +226,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }
 
 .help-options__list-item-collars::before {
@@ -147,6 +246,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }
 
 .help-options__list-item-sleep-area::before {
@@ -161,4 +266,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 60px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+  }
 }

@@ -6,38 +6,98 @@
 // .pets__wrapper {}
 
 .pets__title {
-  margin: 0;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  width: fit-content;
   font-family: $second-family;
   font-size: 35px;
+  font-weight: 400;
   line-height: 130%;
   letter-spacing: 0.06em;
   text-align: center;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 300px;
+    margin-bottom: 42px;
+    font-size: 25px;
+  }
 }
 
-// .pets__slider-container {}
+.pets__slider-container {
+  position: relative;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 .pets__list {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  margin-bottom: 60px;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    justify-content: start;
+    gap: 40px;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 270px;
+    gap: 0;
+  }
+}
+
+.pets__list-catalog {
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .pets__list-item {
+  background-color: $color-light-s;
   font-family: $second-family;
 }
 
-// .pets__image-container {}
+.pets__list-item:hover {
+  background-color: $color-light-xl;
+}
 
-// .pets__list-image {}
+.pets__image-container {
+  width: 270px;
+  margin-bottom: 30px;
+}
+
+.pets__list-image {
+  display: block;
+}
 
 .pets__list-title {
+  margin: 0;
+  margin-bottom: 30px;
   font-size: 20px;
+  font-weight: 400;
   letter-spacing: 0.06em;
   text-align: center;
 }
 
 .pets__list-button,
 .pets__show-more {
+  margin: 0 auto;
+  padding: 15px 45px;
+  display: block;
+  border-radius: 100px;
   font-family: $second-family;
   font-size: 17px;
   line-height: 130%;
@@ -46,10 +106,54 @@
   background-color: inherit;
 }
 
+.pets__list-button {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border: 2px solid $color-primary;
+  margin-bottom: 30px;
+}
+
+.pets__list-item:hover .pets__list-button {
+  border-color: $color-primary-light;
+  background-color: $color-primary-light;
+  cursor: pointer;
+}
+
+.pets__show-more {
+  display: block;
+  width: 100%;
+  max-width: 262px;
+  background-color: $color-primary;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-top: 114px;
+  }
+}
+
+.pets__show-more:hover {
+  background-color: $color-primary-light;
+}
+
 .pets__slider-control {
+  width: 100%;
+  position: absolute;
+  top: 53%;
+  transform: translateY(-50%);
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  pointer-events: none;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    /* justify-content: space-around; */
+    /* top: initial; */
+    margin-left: 57px;
+    top: 587px;
+    justify-content: normal;
+    gap: 81px;
+    width: fit-content;
+  }
 }
 
 .pets__button-left,
@@ -67,6 +171,13 @@
   border-radius: 50%;
   border: 2px solid $color-primary;
   background-color: inherit;
+  pointer-events: auto;
+}
+
+.pets__button-left:hover,
+.pets__button-right:hover {
+  background-color: $color-primary-light;
+  border-color: $color-primary-light;
 }
 
 .pets__button-right::before {
@@ -99,7 +210,8 @@
   transform: translate(-50%, -50%);
   width: 26px;
   height: 23px;
-  background-image: url("../../icons/stack.svg#arrow-secondary-right"),
+  background-image:
+    url("../../icons/stack.svg#arrow-secondary-right"),
     url("../../icons/stack.svg#arrow-secondary-right");
   background-position: left center, right center;
   background-repeat: no-repeat;
@@ -125,7 +237,8 @@
   transform: translate(-50%, -50%);
   width: 26px;
   height: 23px;
-  background-image: url("../../icons/stack.svg#arrow-secondary-left"),
+  background-image:
+    url("../../icons/stack.svg#arrow-secondary-left"),
     url("../../icons/stack.svg#arrow-secondary-left");
   background-position: left center, right center;
   background-repeat: no-repeat;
@@ -144,7 +257,3 @@
 }
 
 // .pets__button-text {}
-
-.pets__show-more {
-  background-color: $color-primary;
-}

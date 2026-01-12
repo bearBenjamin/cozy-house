@@ -1,14 +1,27 @@
 .map-coordinats {
-  width: 302px;
   font-family: $second-family;
   color: $color-light-xl;
 }
 
 .map-coordinats__title {
   margin: 0;
+  margin-bottom: 31px;
+  font-weight: 400;
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 33px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-bottom: 40px;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: 25px;
+    text-align: center;
+  }
 }
 
 .map-coordinats__list {
@@ -18,11 +31,15 @@
 }
 
 .map-coordinats__list-item:not(:last-child) {
-  margin-bottom: 40px;
+  margin-bottom: 37px;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: $color-primary;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-bottom: 44px;
+  }
 }
 
 .map-coordinats__list-link {
@@ -45,8 +62,17 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  background-image: url("../../icons/stack.svg#icon-marker");
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: cover;
+  mask-image: url("../../icons/stack.svg#icon-marker");
+  mask-position: left;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background-color: $color-primary;
+}
+
+.map-coordinats__list-link:hover::before {
+  background-color: $color-primary-light;
+}
+
+.map-coordinats__list-link:hover {
+  color: $color-primary-light;
 }
