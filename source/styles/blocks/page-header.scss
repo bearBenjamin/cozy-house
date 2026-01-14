@@ -1,8 +1,31 @@
 .page-header {
+  padding-top: 30px;
   background-color: $color-light-xl;
   color: $color-dark-3xl;
 }
 
+.page-header__wrapper {
+  @media (max-width: ($tablet-width - 1px)) {
+    position: relative;
+  }
+}
+
 .page-header__button {
   display: none;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    display: block;
+  }
+}
+
+.page-header__nav {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 257px;
+  }
 }
