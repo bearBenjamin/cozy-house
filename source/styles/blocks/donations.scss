@@ -104,6 +104,10 @@
   }
 }
 
+.donations__link:hover {
+  background-color: $color-primary-light;
+}
+
 .donations__link::before {
   content: "";
   position: absolute;

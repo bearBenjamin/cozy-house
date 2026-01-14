@@ -3,10 +3,10 @@
   background-color: $gradient-background;
   background-image:
     image-set(
-      "../../images/noise_transparent@2x@1x.webp" 1x,
-      "../../images/noise_transparent@2x@2x.webp" 2x,
-      "../../images/noise_transparent@2x@1x.jpg" 1x,
-      "../../images/noise_transparent@2x@2x.jpg" 2x
+      "../images/noise_transparent@2x@1x.webp" 1x,
+      "../images/noise_transparent@2x@2x.webp" 2x,
+      "../images/noise_transparent@2x@1x.jpg" 1x,
+      "../images/noise_transparent@2x@2x.jpg" 2x
     ),
     radial-gradient(ellipse at 5.73% 50%, #513d2f 0%, #1a1a1c 100%);
 
