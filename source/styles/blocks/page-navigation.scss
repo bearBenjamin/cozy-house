@@ -87,6 +87,10 @@
   position: relative;
   font-size: 15px;
   line-height: 160%;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    font-size: 32px;
+  }
 }
 
 .page-navigation__list-item-link {
@@ -95,6 +99,10 @@
   font-size: 15px;
   line-height: 160%;
   color: $color-dark-l;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    font-size: 32px;
+  }
 
   &--current {
     cursor: default;
