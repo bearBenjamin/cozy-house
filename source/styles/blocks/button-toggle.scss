@@ -59,10 +59,16 @@
     0 -10px 0 $color-primary;
 }
 
-.button-toggle:hover .button-toggle__line,
-.button-toggle--close:hover .button-toggle__line {
+.button-toggle:hover .button-toggle__line {
   background-color: $color-primary-light;
   box-shadow:
     0 10px 0 $color-primary-light,
     0 20px 0 $color-primary-light;
+}
+
+.button-toggle--close:hover .button-toggle__line {
+  background-color: $color-primary-light;
+  box-shadow:
+    0 10px 0 $color-primary-light,
+    0 -10px 0 $color-primary-light;
 }

@@ -46,7 +46,7 @@
     0 20px 0 #000000;
 }
 
-.page-button-toggle--close .button-toggle__line {
+.page-button-toggle--close .page-button-toggle__line {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,10 +59,16 @@
     0 -10px 0 #000000;
 }
 
-.page-button-toggle:hover .page-button-toggle__line,
-.page-button-toggle--close:hover .page-button-toggle__line {
+.page-button-toggle:hover .page-button-toggle__line {
   background-color: $color-dark-s;
   box-shadow:
     0 10px 0 $color-dark-s,
     0 20px 0 $color-dark-s;
+}
+
+.page-button-toggle--close:hover .page-button-toggle__line {
+  background-color: $color-dark-s;
+  box-shadow:
+    0 10px 0 $color-dark-s,
+    0 -10px 0 $color-dark-s;
 }
