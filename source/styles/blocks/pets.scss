@@ -65,7 +65,7 @@
 
 .pets__catalog-slider-window {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1220px;
   margin: 0 auto;
   margin-bottom: 97px;
   overflow: hidden;
@@ -73,15 +73,29 @@
   @media (max-width: ($desktop-width - 1px)) {
     justify-content: center;
     align-items: center;
-    max-width: 580px;
+    max-width: 610px;
     max-height: 1365px;
     margin-bottom: 67px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    max-width: 270px;
+    max-width: 280px;
     margin-bottom: 93px;
   }
+}
+
+.pets__list-track {
+  display: flex;
+  gap: 1px;
+  width: 300%;
+  transform: translateX(-33.33%);
+  position: relative;
+}
+
+.pets__slide {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
 }
 
 .pets__list {
@@ -198,7 +212,7 @@
     /* justify-content: space-around; */
     /* top: initial; */
     margin-left: 57px;
-    top: 587px;
+    top: auto; //587px;
     justify-content: normal;
     gap: 81px;
     width: fit-content;
