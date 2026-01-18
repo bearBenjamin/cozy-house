@@ -1,100 +1,144 @@
-//import { petsData } from './data.js';
+import { petsData } from './data.js';
+
 const initCarousel = () => {
+  const track = document.querySelector('.pets__list-track');
   const leftBtn = document.querySelector('.pets__button-left');
   const rightBtn = document.querySelector('.pets__button-right');
-  const slider = document.querySelector('.pets__list');
 
-  if (!slider || !leftBtn || !rightBtn) {
+  if (!track || !leftBtn || !rightBtn) {
     return;
   }
 
-  const state = {
-    index: 0,
-    currentCount: 0,
-    currentGap: 0,
-    cardWidth: 0,
-    lastCount: 0
+  const slides = {
+    left: track.querySelector('#slide-left .pets__list'),
+    center: track.querySelector('#slide-center .pets__list'),
+    right: track.querySelector('#slide-right .pets__list')
   };
 
-  const totalCards = slider.querySelectorAll('.pets__list-item').length;
+  const sets = {
+    left: [],
+    center: [],
+    right: []
+  };
 
-  const updateMetrics = () => {
+  let isMoving = false;
+
+  const getCardsCount = () => {
     const isDesktop = window.matchMedia('(min-width: 1280px)').matches;
     const isTablet = window.matchMedia('(min-width: 768px) and (max-width: 1279px)').matches;
+    let currentCount;
 
     if (isDesktop) {
-      state.currentCount = 3;
-      state.currentGap = 90;
+      currentCount = 3;
     } else if (isTablet) {
-      state.currentCount = 2;
-      state.currentGap = 40;
+      currentCount = 2;
     } else {
-      state.currentCount = 1;
-      state.currentGap = 0;
+      currentCount = 1;
     }
 
-    if (state.lastCount !== state.currentCount) {
-      state.index = 0;
-      state.lastCount = state.currentCount;
-    }
-
-    const firstCard = document.querySelector('.pets__list-item');
-
-    if (firstCard) {
-      state.cardWidth = firstCard.getBoundingClientRect().width;
-    }
+    return currentCount;
   };
 
-  const renderSlider = () => {
-    const step = state.cardWidth + state.currentGap;
-    const offset = state.index * state.currentCount * step;
+  let lastCardsCount = 0;
 
-    slider.style.transform = `translateX(${-offset}px)`;
+  const genereteUniqueSet = (count, excludeSet = []) => {
+    const results = [];
+
+    const availabels = petsData.filter((pet) => !excludeSet.some((item) => item.name === pet.name));
+
+    const shuffledAvailabels = [...availabels].sort(() => Math.random() - 0.5);
+
+    for (let i = 0; i < count; i += 1) {
+      results.push(shuffledAvailabels[i]);
+    }
+
+    return results;
+  };
+
+  const createCardPet = (pet) => {
+    const templateCard = document.querySelector('#pet-card-template').content;
+    const cardPet = templateCard.cloneNode(true);
+
+    const imgPet = cardPet.querySelector('.pets__list-image');
+    const namePet = cardPet.querySelector('.pets__list-title');
+
+    imgPet.src = pet.img;
+    namePet.textContent = pet.name;
+
+    return cardPet;
+  };
+
+  const renderSet = (listElement, petsSet) => {
+    listElement.innerHTML = '';
+    petsSet.forEach((pet) => listElement.appendChild(createCardPet(pet)));
+  };
+
+  const setup = () => {
+    const count = getCardsCount();
+
+    sets.center = genereteUniqueSet(count);
+    sets.left = genereteUniqueSet(count, sets.center);
+    sets.right = genereteUniqueSet(count, sets.center);
+
+    renderSet(slides.center, sets.center);
+    renderSet(slides.left, sets.left);
+    renderSet(slides.right, sets.right);
   };
 
   const handleNavigation = (direction) => {
-    const maxIndex = Math.ceil(totalCards / state.currentCount) - 1;
+    if(isMoving) {
+      return;
+    }
+
+    isMoving = true;
+
+    const count = getCardsCount();
+
+    track.style.transition = 'transform 0.5s ease-in-out';
 
     if (direction === 'next') {
-      state.index = (state.index < maxIndex) ? state.index + 1 : 0;
+      track.style.transform = 'translateX(-66.666666%)';
     } else {
-      state.index = (state.index > 0) ? state.index - 1 : maxIndex;
+      track.style.transform = 'translateX(0%)';
     }
 
-    renderSlider();
+    track.addEventListener('transitionend', () => {
+      track.style.transition = 'none';
+
+      if (direction === 'next') {
+        sets.left = [...sets.center];
+        sets.center = [...sets.right];
+        sets.right = genereteUniqueSet(count, sets.center);
+      } else {
+        sets.right = [...sets.center];
+        sets.center = [...sets.left];
+        sets.left = genereteUniqueSet(count, sets.center);
+      }
+
+      renderSet(slides.center, sets.center);
+      renderSet(slides.left, sets.left);
+      renderSet(slides.right, sets.right);
+
+      track.style.transform = 'translateX(-33.333333%)';
+      isMoving = false;
+    }, { once: true });
   };
-
-
-  // window.addEventListener('resize', () => {
-  //   updateMetrics();
-  //   const maxIndex = Math.ceil(totalCards / state.currentCount) - 1;
-
-  //   if (state.index > maxIndex) {
-  //     state.index = maxIndex;
-  //   }
-
-  //   renderSlider();
-  // });
-
-  const observer = new ResizeObserver(() => {
-    updateMetrics();
-
-    const maxIndex = Math.ceil(totalCards / state.currentCount) - 1;
-    if (state.index > maxIndex) {
-      state.index = maxIndex;
-    }
-
-    renderSlider();
-  });
-
-  observer.observe(slider.parentElement);
 
   rightBtn.addEventListener('click', () => handleNavigation('next'));
   leftBtn.addEventListener('click', () => handleNavigation('prev'));
 
-  //updateMetrics();
-  //renderSlider();
-};
+  const observer = new ResizeObserver(() => {
+    const newCount = getCardsCount();
 
+    if (newCount !== lastCardsCount) {
+      lastCardsCount = newCount;
+      setup();
+    } else {
+      track.style.transform = 'translateX(-33.333333%)';
+    }
+  });
+
+  observer.observe(track.parentElement);
+};
 
 export { initCarousel };
