@@ -61,9 +61,11 @@ const initCarousel = () => {
 
     const imgPet = cardPet.querySelector('.pets__list-image');
     const namePet = cardPet.querySelector('.pets__list-title');
+    const btnPet = cardPet.querySelector('.pets__list-button');
 
     imgPet.src = pet.img;
     namePet.textContent = pet.name;
+    btnPet.id = pet.id;
 
     return cardPet;
   };

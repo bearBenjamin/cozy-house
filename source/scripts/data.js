@@ -142,4 +142,8 @@ const petsData = [
   }
 ];
 
+petsData.forEach((pet, index) => {
+  pet.id = index + 1;
+});
+
 export { petsData };
