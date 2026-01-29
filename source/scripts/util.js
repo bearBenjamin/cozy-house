@@ -1,5 +1,8 @@
 const DESKTOP = 1280;
 const TABLET = 768;
+const NUM_SLIDES_DESKTOP = 3;
+const NUM_SLIDES_TABLET = 2;
+const NUM_SLIDES_MOBILE = 1;
 
 const getCardsCount = () => {
   let currentCount;
@@ -7,16 +10,16 @@ const getCardsCount = () => {
   const isTablet = window.matchMedia(`(min-width: ${TABLET}px) and (max-width: ${DESKTOP - 1}px)`).matches;
 
   if (isDesktop) {
-    currentCount = 3;
+    currentCount = NUM_SLIDES_DESKTOP;
     return currentCount;
   }
 
   if (isTablet) {
-    currentCount = 2;
+    currentCount = NUM_SLIDES_TABLET;
     return currentCount;
   }
 
-  currentCount = 1;
+  currentCount = NUM_SLIDES_MOBILE;
   return currentCount;
 };
 

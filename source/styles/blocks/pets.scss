@@ -94,22 +94,23 @@
 
 .pets__slide {
   width: 33.33%;
-  display: flex;
-  justify-content: center;
+  //display: flex;
+  //justify-content: center;
 }
 
 .pets__list {
   max-width: max-content;
   display: flex;
+  flex-wrap: wrap;
   justify-content: start;
-  gap: 90px;
+  gap: 89px;
   margin: 0;
   margin-bottom: 60px;
   padding: 0;
   list-style: none;
 
   @media (max-width: ($desktop-width - 1px)) {
-    gap: 40px;
+    gap: 39px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {

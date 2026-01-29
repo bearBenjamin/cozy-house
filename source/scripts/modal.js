@@ -1,65 +1,108 @@
 import { petsData } from './data';
 
-const modal = document.querySelector('.modal-container');
-const imgModal = modal.querySelector('.modal-info__img');
-const titleModal = modal.querySelector('.modal-info__title');
-const secondaryTitleModal = modal.querySelector('.modal-info__secondary-title');
-const textModal = modal.querySelector('.modal-info__text');
-const ageList = modal.querySelector('.age');
-const inoculationsList = modal.querySelector('.inoculations');
-const diseasesList = modal.querySelector('.diseases');
-const parasitesList = modal.querySelector('.parasites');
-const btnClose = modal.querySelector('.modal-info__button-close');
+let modalElements = null;
+let lastFocusedElement = null;
 
+const getModalElements = () => {
+  const modal = document.querySelector('.modal-container');
 
-const openModal = (id) => {
+  if (!modal) {
+    return null;
+  }
+
+  const elements = {
+    modal,
+    imgModal: modal.querySelector('.modal-info__img'),
+    titleModal: modal.querySelector('.modal-info__title'),
+    secondaryTitleModal: modal.querySelector('.modal-info__secondary-title'),
+    textModal: modal.querySelector('.modal-info__text'),
+    ageList: modal.querySelector('.age'),
+    inoculationsList: modal.querySelector('.inoculations'),
+    diseasesList: modal.querySelector('.diseases'),
+    parasitesList: modal.querySelector('.parasites'),
+    btnClose: modal.querySelector('.modal-info__button-close')
+  };
+
+  const isAllElementsFound = Object.values(elements).every((element) => element !== null);
+
+  if (!isAllElementsFound) {
+    return null;
+  }
+
+  return elements;
+};
+
+const handleTabKey = (evt) => {
+  if (evt.key === 'Tab' && document.activeElement === modalElements.btnClose) {
+    evt.preventDefault();
+  }
+};
+
+const openModal = (id, triggerBtn) => {
   const pet = petsData.find((item) => item.id === id);
 
   if (!pet) {
     return;
   }
 
-  const nameImg = pet.img.split('/').pop();
+  modalElements.imgModal.src = `./${pet.img}`;
+  modalElements.titleModal.textContent = pet.name;
+  modalElements.secondaryTitleModal.textContent = `${pet.type} - ${pet.breed}`;
+  modalElements.textModal.textContent = pet.description;
+  modalElements.ageList.textContent = ` ${pet.age}`;
+  modalElements.inoculationsList.textContent = ` ${pet.inoculations.join(', ')}`;
+  modalElements.diseasesList.textContent = ` ${pet.diseases.join(', ')}`;
+  modalElements.parasitesList.textContent = ` ${pet.parasites.join(', ')}`;
 
-  imgModal.src = `./images/pets/${nameImg}`;
-  titleModal.textContent = pet.name;
-  secondaryTitleModal.textContent = `${pet.type} - ${pet.breed}`;
-  textModal.textContent = pet.description;
-  ageList.textContent = ` ${pet.age}`;
-  inoculationsList.textContent = ` ${pet.inoculations.join(', ')}`;
-  diseasesList.textContent = ` ${pet.diseases.join(', ')}`;
-  parasitesList.textContent = ` ${pet.parasites.join(', ')}`;
+  lastFocusedElement = triggerBtn;
 
-  modal.classList.remove('modal-container--close');
+  modalElements.modal.classList.remove('modal-container--close');
   document.body.classList.add('page__body--noscroll');
+
+  modalElements.btnClose.focus();
+
+  document.addEventListener('keydown', handleTabKey);
 };
 
+
 const closeModal = () => {
-  modal.classList.add('modal-container--close');
+  modalElements.modal.classList.add('modal-container--close');
   document.body.classList.remove('page__body--noscroll');
+
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+
+  document.removeEventListener('keydown', handleTabKey);
 };
 
 const initModal = () => {
+  modalElements = getModalElements();
+
+  if (!modalElements) {
+    return;
+  }
+
   const sliderContainer = document.querySelector('.pets__slider-container');
 
   sliderContainer.addEventListener('click', (evt) => {
     const btn = evt.target.closest('.pets__list-button');
 
     if (btn) {
-      openModal(Number(btn.id));
+      openModal(Number(btn.id), btn);
     }
   });
 
-  btnClose.addEventListener('click', closeModal);
+  modalElements.btnClose.addEventListener('click', closeModal);
 
-  modal.addEventListener('click', (evt) => {
-    if (evt.target === modal) {
+  modalElements.modal.addEventListener('click', (evt) => {
+    if (evt.target === modalElements.modal) {
       closeModal();
     }
   });
 
   document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape' && !modal.classList.contains('modal-container--close')) {
+    if (evt.key === 'Escape' && !modalElements.modal.classList.contains('modal-container--close')) {
       closeModal();
     }
   });
