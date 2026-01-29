@@ -243,6 +243,48 @@
       </div>
     </div>
   </footer>
+  <div class="modal-container modal-container--close">
+    <div class="modal-container__info modal-info">
+      <section class="modal-info__content">
+        <button class="modal-info__button-close" type="button">
+          <span class="visually-hidden">Закрыть модальное окно</span>
+        </button>
+        <div class="modal-info__content-img-wrapper">
+          <picture>
+            <img class="modal-info__img" src="#" width="500" height="500" alt="Питомец нашего приюта">
+          </picture>
+        </div>
+        <h2 class="modal-info__title"></h2>
+        <h3 class="modal-info__secondary-title"></h3>
+        <p class="modal-info__text"></p>
+        <ul class="modal-info__list">
+          <li class="modal-info__item">
+            <b>Age:</b><span class="age"></span>
+          </li>
+          <li class="modal-info__item" id="modal-list-item-inoculations">
+            <b>Inoculations:</b><span class="inoculations"></span>
+          </li>
+          <li class="modal-info__item" id="modal-list-item-diases">
+            <b>Diseases:</b><span class="diseases"></span>
+          </li>
+          <li class="modal-info__item" id="modal-list-item-parasites">
+            <b>Parasites:</b><span class="parasites"></span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <template class="pets" id="pet-card-template">
+    <li class="pets__list-item">
+      <div class="pets__image-container">
+        <picture>
+          <img class="pets__list-image" src="#" width="270" height="270" alt="Питомец нашего приюта">
+        </picture>
+      </div>
+      <h3 class="pets__list-title"></h3>
+      <button class="pets__list-button" type="button">Learn more</button>
+    </li>
+  </template>
 </body>
 
 </html>
