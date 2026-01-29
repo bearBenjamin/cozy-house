@@ -1,0 +1,1 @@
+var s=e=>{let t=document.querySelector("#pet-card-template").content.cloneNode(!0),n=t.querySelector(".pets__list-image"),c=t.querySelector(".pets__list-title"),o=t.querySelector(".pets__list-button");return n.src=e.img,c.textContent=e.name,o.id=e.id,t},a=(e,r)=>{e.innerHTML="",r.forEach(t=>e.appendChild(s(t)))};export{a as renderCards};
