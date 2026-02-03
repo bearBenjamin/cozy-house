@@ -3,10 +3,13 @@ const createCardPet = (data) => {
   const cardPet = templateCard.cloneNode(true);
 
   const imgPet = cardPet.querySelector('.pets__list-image');
+  const imgSource = cardPet.querySelector('.pets__img-source');
   const namePet = cardPet.querySelector('.pets__list-title');
   const btnPet = cardPet.querySelector('.pets__list-button');
 
-  imgPet.src = data.img;
+  imgPet.src = `${data.img}@1x.jpg`;
+  imgPet.srcset = `${data.img}@2x.jpg`;
+  imgSource.srcset = `${data.img}@1x.webp 1x, ${data.img}@2x.webp 2x`;
   namePet.textContent = data.name;
   btnPet.id = data.id;
 
@@ -19,3 +22,5 @@ const renderCards = (listElement, datas) => {
 };
 
 export { renderCards, createCardPet };
+
+

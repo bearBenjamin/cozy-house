@@ -13,6 +13,7 @@ const getModalElements = () => {
   const elements = {
     modal,
     imgModal: modal.querySelector('.modal-info__img'),
+    imgSource: modal.querySelector('.modal-info__img-source'),
     titleModal: modal.querySelector('.modal-info__title'),
     secondaryTitleModal: modal.querySelector('.modal-info__secondary-title'),
     textModal: modal.querySelector('.modal-info__text'),
@@ -45,7 +46,9 @@ const openModal = (id, triggerBtn) => {
     return;
   }
 
-  modalElements.imgModal.src = `./${pet.img}`;
+  modalElements.imgModal.src = `./${pet.img}@1x.jpg`;
+  modalElements.imgModal.srcset = `./${pet.img}@2x.jpg`;
+  modalElements.imgSource.srcset = `./${pet.img}@1x.webp 1x, ${pet.img}@2x.webp 2x`;
   modalElements.titleModal.textContent = pet.name;
   modalElements.secondaryTitleModal.textContent = `${pet.type} - ${pet.breed}`;
   modalElements.textModal.textContent = pet.description;
