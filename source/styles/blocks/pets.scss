@@ -292,10 +292,11 @@
   position: absolute;
   width: 13px;
   height: 23px;
-  background-image: url("../../icons/stack.svg#arrow-secondary-right");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: $color-dark-3xl;
+  mask-image: url("../../icons/stack.svg#arrow-secondary-right");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
 }
 
 .pets__pagination-end::before {
@@ -306,12 +307,13 @@
   transform: translate(-50%, -50%);
   width: 26px;
   height: 23px;
-  background-image:
+  background-color: $color-dark-3xl;
+  mask-image:
     url("../../icons/stack.svg#arrow-secondary-right"),
     url("../../icons/stack.svg#arrow-secondary-right");
-  background-position: left center, right center;
-  background-repeat: no-repeat;
-  background-size: 13px 23px;
+  mask-position: left center, right center;
+  mask-repeat: no-repeat;
+  mask-size: 13px 23px;
 }
 
 .pets__pagination-start::before {
@@ -322,12 +324,13 @@
   transform: translate(-50%, -50%);
   width: 26px;
   height: 23px;
-  background-image:
+  background-color: $color-dark-3xl;
+  mask-image:
     url("../../icons/stack.svg#arrow-secondary-left"),
     url("../../icons/stack.svg#arrow-secondary-left");
-  background-position: left center, right center;
-  background-repeat: no-repeat;
-  background-size: 13px 23px;
+  mask-position: left center, right center;
+  mask-repeat: no-repeat;
+  mask-size: 13px 23px;
 }
 
 .pets__pagination-left::before {
@@ -335,10 +338,11 @@
   position: absolute;
   width: 13px;
   height: 23px;
-  background-image: url("../../icons/stack.svg#arrow-secondary-left");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: $color-dark-3xl;
+  mask-image: url("../../icons/stack.svg#arrow-secondary-left");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: cover;
 }
 
 // .pets__button-text {}
@@ -359,5 +363,12 @@
 .pets__pagination-right:disabled {
   background-color: inherit;
   border-color: $color-dark-s;
-  cursor: not-allowed;
+  cursor: default;
+}
+
+.pets__pagination-start:disabled::before,
+.pets__pagination-left:disabled::before,
+.pets__pagination-end:disabled::before,
+.pets__pagination-right:disabled::before {
+  background-color: $color-dark-s;
 }
