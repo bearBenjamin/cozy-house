@@ -2,6 +2,12 @@ import { petsData } from './data.js';
 import { getCardsCount, genereteUniqueSet, shiftSets } from './util.js';
 import { renderCards } from './render.js';
 
+const CURRENT_COUNT = {
+  DESKTOP: 3,
+  TABLET: 2,
+  MOBILE: 1
+};
+
 const SLIDES_POSITION = {
   LEFT: '0',
   CENTER: '-33.333333%',
@@ -40,7 +46,7 @@ const updateSlidesUI = (slides) => {
 };
 
 const setupCarousel = (slides) => {
-  const count = getCardsCount();
+  const count = getCardsCount(CURRENT_COUNT);
 
   state.sets.center = genereteUniqueSet(petsData, count);
   state.sets.left = genereteUniqueSet(petsData, count, state.sets.center);
@@ -51,7 +57,7 @@ const setupCarousel = (slides) => {
 
 const initResizeWatcher = (slides) => {
   const observer = new ResizeObserver(() => {
-    const newCount = getCardsCount();
+    const newCount = getCardsCount(CURRENT_COUNT);
     if (newCount !== state.lastCardsCount) {
       state.lastCardsCount = newCount;
       setupCarousel(slides);
@@ -69,7 +75,7 @@ const handleNavigation = (direction, slides) => {
 
   state.isMoving = true;
 
-  const count = getCardsCount();
+  const count = getCardsCount(CURRENT_COUNT);
 
   track.style.transition = 'transform 0.5s ease-in-out';
 

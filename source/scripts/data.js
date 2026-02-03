@@ -1,3 +1,5 @@
+import { shuffle } from './util.js';
+
 const petsData = [
   {
     'name': 'Jennifer',
@@ -146,4 +148,47 @@ petsData.forEach((pet, index) => {
   pet.id = index + 1;
 });
 
-export { petsData };
+const paginationDatasLength = 48;
+
+const paginationDatas = Array.from({ length: paginationDatasLength }, (_, i) => {
+  const newItem = { ...petsData[i % petsData.length] };
+  newItem.id = i + 1;
+  return newItem;
+});
+
+const hasNoDuplicatesOnEdges = (array) => {
+  const sizes = [3, 6, 8];
+  for (const size of sizes) {
+    for (let i = size; i < array.length; i += size) {
+      if (array[i].name === array[i - 1].name) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+const chunkSize = 8;
+let finalPaginationData = [];
+let isValidData = false;
+
+while (!isValidData) {
+  finalPaginationData = [];
+
+  for (let i = 0; i < paginationDatasLength; i += chunkSize) {
+    let chunk = paginationDatas.slice(i, i + chunkSize);
+
+    if (i > 0) {
+      chunk = shuffle(chunk);
+    }
+
+    finalPaginationData.push(...chunk);
+  }
+
+  if (hasNoDuplicatesOnEdges(finalPaginationData)) {
+    isValidData = true;
+  }
+}
+
+
+export { petsData, finalPaginationData };

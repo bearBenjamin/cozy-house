@@ -1,4 +1,4 @@
-import { petsData } from './data';
+import { finalPaginationData } from './data';
 
 let modalElements = null;
 let lastFocusedElement = null;
@@ -39,7 +39,7 @@ const handleTabKey = (evt) => {
 };
 
 const openModal = (id, triggerBtn) => {
-  const pet = petsData.find((item) => item.id === id);
+  const pet = finalPaginationData.find((item) => item.id === id);
 
   if (!pet) {
     return;

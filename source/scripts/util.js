@@ -1,25 +1,22 @@
 const DESKTOP = 1280;
 const TABLET = 768;
-const NUM_SLIDES_DESKTOP = 3;
-const NUM_SLIDES_TABLET = 2;
-const NUM_SLIDES_MOBILE = 1;
 
-const getCardsCount = () => {
+const getCardsCount = (count) => {
   let currentCount;
   const isDesktop = window.matchMedia(`(min-width: ${DESKTOP}px)`).matches;
-  const isTablet = window.matchMedia(`(min-width: ${TABLET}px) and (max-width: ${DESKTOP - 1}px)`).matches;
+  const isTablet = window.matchMedia(`(min-width: ${TABLET}px)`).matches;
 
   if (isDesktop) {
-    currentCount = NUM_SLIDES_DESKTOP;
+    currentCount = count.DESKTOP;
     return currentCount;
   }
 
   if (isTablet) {
-    currentCount = NUM_SLIDES_TABLET;
+    currentCount = count.TABLET;
     return currentCount;
   }
 
-  currentCount = NUM_SLIDES_MOBILE;
+  currentCount = count.MOBILE;
   return currentCount;
 };
 
@@ -55,4 +52,12 @@ const shiftSets = (direction, currentSets, count, data) => {
   }
 };
 
-export { getCardsCount, genereteUniqueSet, shiftSets };
+const shuffle = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+export { getCardsCount, genereteUniqueSet, shiftSets, shuffle };

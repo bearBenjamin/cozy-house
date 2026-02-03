@@ -18,4 +18,4 @@ const renderCards = (listElement, datas) => {
   datas.forEach((pet) => listElement.appendChild(createCardPet(pet)));
 };
 
-export { renderCards };
+export { renderCards, createCardPet };
